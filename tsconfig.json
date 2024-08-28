@@ -1,3 +1,14 @@
 {
-  "extends": "astro/tsconfigs/base"
+  "extends": "astro/tsconfigs/strictest",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "baseUrl": "C:/Users/marco/ccsf-cs-club",
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ]
+    },
+    "jsxImportSource": "react"
+  }
 }

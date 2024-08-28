@@ -12,12 +12,19 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
+    "@astrojs/react": "^3.6.0",
     "@astrojs/tailwind": "^5.1.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@uploadthing/react": "^6.7.0",
     "astro": "^4.2.1",
     "daisyui": "^4.7.2",
     "flowbite": "^2.3.0",
     "flowbite-datepicker": "^1.2.6",
-    "typescript": "^5.3.3"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.3.3",
+    "uploadthing": "^6.13.0"
   },
   "devDependencies": {
     "prettier": "3.2.5",

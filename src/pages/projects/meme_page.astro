@@ -1,8 +1,79 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { ImageUploader } from "~/components/image-uploader";
+
 ---
 
 <Layout title="Project">
-  <ImageUploader client:load />
+    <h2>Share your meme</h2>
+  </br>
+  <div class = "uploadStyle">
+    <ImageUploader client:load />
+  </div>
+
+  </br>
+  <div class="imagecarousel">
+    <img src="https://images.pexels.com/photos/462162/pexels-photo-462162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+  
+    <img src="https://images.pexels.com/photos/462162/pexels-photo-462162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+  
+    <img src="https://images.pexels.com/photos/462162/pexels-photo-462162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+  
+    <img src="https://images.pexels.com/photos/462162/pexels-photo-462162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+    <img src="https://images.pexels.com/photos/462162/pexels-photo-462162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+  
+    <img src="https://images.pexels.com/photos/462162/pexels-photo-462162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+  
+    <img src="https://images.pexels.com/photos/462162/pexels-photo-462162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+  
+    <img src="https://images.pexels.com/photos/462162/pexels-photo-462162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+  
+  
+  </div>
+  </section>
+  
 </Layout>
+
+<style>
+  .uploadStyle {
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 20px;
+    width: 450px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    margin: 0 auto; /* Center the div horizontally */
+  }
+  .uploadStyle:hover {
+    background-color: rgba(128, 128, 128, 0.5)
+  }
+  h2 {
+    text-align: center;
+  }
+ 
+  .imagecarousel {
+  position: relative;
+  height: 233px;
+  margin-bottom: 30px;
+  display: flex;
+  width: fit-content;
+  gap: 20px;
+}
+
+.imagecarousel img {
+  margin: 0px 0px;
+  box-shadow: 2px 2px 8px #8a8a8a;
+}
+
+.imagecarousel {
+  animation: bannermove 50s linear infinite;
+}
+
+@keyframes bannermove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+</style>
