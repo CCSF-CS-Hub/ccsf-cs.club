@@ -1,0 +1,180 @@
+
+---
+import { Picture } from "astro:assets";
+import alpineMeme from "../../assets/alpineMeme.png";
+---
+<head>
+<script  src="https://cdn.tailwindcss.com"></script>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    let sliderContainer = document.getElementById('sliderContainer');
+    let slider = document.getElementById('slider');
+    let cards = slider.getElementsByTagName('li');
+
+    let elementsToShow=4;
+    if(document.body.clientWidth<500){
+        elementsToShow=1;
+    } else if(document.body.clientWidth<800){
+        elementsToShow=2;
+    }  else if(document.body.clientWidth<1000){
+        elementsToShow=3;
+    }
+
+    let sliderContainerWidth = sliderContainer.clientWidth;
+
+    let cardWidth = sliderContainerWidth/elementsToShow;
+
+    slider.style.width = cards.length*cardWidth+'px';
+    slider.style.transition='margin';
+    slider.style.transitionDuration='1s';
+
+    for (let index=0; index<cards.length; index++){
+        const element = cards[index];
+        element.style.width = cardWidth+'px';
+    }
+
+    window.prev = function(){
+       // if (+slider.style.marginLeft.slice(0,-2)!=cardWidth*(cards.length-elementsToShow)) //tried to find a way to have boundaries for the buttons
+            slider.style.marginLeft= ((+slider.style.marginLeft.slice(0,-2))-cardWidth) + 'px';   //100px 
+    }
+    window.next = function(){
+       // if (+slider.style.marginLeft.slice(0,-2)!=-cardWidth*(cards.length-elementsToShow)) //needs boundaries for buttons
+            slider.style.marginLeft= ((+slider.style.marginLeft.slice(0,-2))+cardWidth) + 'px';    //100px
+    }
+});
+</script>
+
+<body>
+    <section>
+    <div class="flex">
+<!-- (right) Next Button -->
+<div class="w-2/12 flex items-center">
+    <div class="w-full text-right">
+        <button onclick="next()" class="p-3 rounded-full bg-white border border-gray-100 shadow-lg mr-5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+              </svg>                          
+          </button>
+    </div>
+    </div>
+
+<div id="sliderContainer" class="w-10/12 overflow-hidden">
+<!-- Eight slides ofimages -->
+    <ul id="slider" class="flex w-full transition-margin duration-700">
+        <li class="p-5">
+            <div class="border rounded-lg p-5 h-full">
+                <Picture class="h-50 w-full object-cover rounded-md" src={alpineMeme} alt="1/29" />
+            <h2 class="mt-2 text-2xl font-bold text-gray-700"> Event/Meeting Heading. </h2>
+            <p class="mt-2 text-gray-500">   
+                Lorem ipsum, dolor sit amet consectetur adipiscicing elit.
+            </p>
+            <button class="mt-4 px-6 py-3 rounded-md bg-yellow-700 text-white front-bold ">Read More</button>
+            </div>
+        </li>
+        <li class="p-5">
+            <div class="border rounded-lg p-5">
+                <Picture class="h-50 w-full object-cover rounded-md" src={alpineMeme} alt="1/29" />
+            <h2 class="mt-2 text-2xl font-bold text-gray-700"> Event/Meeting Heading. </h2>
+            <p class="mt-2 text-gray-500">   
+                Lorem ipsum, dolor sit amet consectetur adipiscicing elit.
+            </p>
+            <button class="mt-4 px-6 py-3 rounded-md bg-yellow-700 text-white front-bold ">Read More</button>
+            </div>
+        </li>
+        <li class="p-5">
+            <div class="border rounded-lg p-5">
+                <Picture class="h-50 w-full object-cover rounded-md" src={alpineMeme} alt="1/29" />
+            <h2 class="mt-2 text-2xl font-bold text-gray-700"> Event/Meeting Heading. </h2>
+            <p class="mt-2 text-gray-500">   
+                Lorem ipsum, dolor sit amet consectetur adipiscicing elit.
+            </p>
+            <button class="mt-4 px-6 py-3 rounded-md bg-yellow-700 text-white front-bold ">Read More</button>
+            </div>
+        </li>
+        <li class="p-5">
+            <div class="border rounded-lg p-5">
+                <Picture class="h-50 w-full object-cover rounded-md" src={alpineMeme} alt="1/29" />
+            <h2 class="mt-2 text-2xl font-bold text-gray-700"> Event/Meeting Heading. </h2>
+            <p class="mt-2 text-gray-500">   
+                Lorem ipsum, dolor sit amet consectetur adipiscicing elit.
+            </p>
+            <button class="mt-4 px-6 py-3 rounded-md bg-yellow-700 text-white front-bold ">Read More</button>
+            </div>
+        </li>
+        <li class="p-5">
+            <div class="border rounded-lg p-5">
+                <Picture class="h-50 w-full object-cover rounded-md" src={alpineMeme} alt="1/29" />
+            <h2 class="mt-2 text-2xl font-bold text-gray-700"> Event/Meeting Heading. </h2>
+            <p class="mt-2 text-gray-500">   
+                Lorem ipsum, dolor sit amet consectetur adipiscicing elit.
+            </p>
+            <button class="mt-4 px-6 py-3 rounded-md bg-yellow-700 text-white front-bold ">Read More</button>
+            </div>
+        </li>
+        <li class="p-5">
+            <div class="border rounded-lg p-5 h-full">
+                <Picture class="h-50 w-full object-cover rounded-md" src={alpineMeme} alt="1/29" />
+            <h2 class="mt-2 text-2xl font-bold text-gray-700"> Event/Meeting Heading. </h2>
+            <p class="mt-2 text-gray-500">   
+                Lorem ipsum, dolor sit amet consectetur adipiscicing elit.
+            </p>
+            <button class="mt-4 px-6 py-3 rounded-md bg-yellow-700 text-white front-bold ">Read More</button>
+            </div>
+        </li>
+        <li class="p-5">
+            <div class="border rounded-lg p-5">
+                <Picture class="h-50 w-full object-cover rounded-md" src={alpineMeme} alt="1/29" />
+            <h2 class="mt-2 text-2xl font-bold text-gray-700"> Event/Meeting Heading. </h2>
+            <p class="mt-2 text-gray-500">   
+                Lorem ipsum, dolor sit amet consectetur adipiscicing elit.
+            </p>
+            <button class="mt-4 px-6 py-3 rounded-md bg-yellow-700 text-white front-bold ">Read More</button>
+            </div>
+        </li>
+        <li class="p-5">
+            <div class="border rounded-lg p-5">
+                <Picture class="h-50 w-full object-cover rounded-md" src={alpineMeme} alt="1/29" />
+            <h2 class="mt-2 text-2xl font-bold text-gray-700"> Event/Meeting Heading. </h2>
+            <p class="mt-2 text-gray-500">   
+                Lorem ipsum, dolor sit amet consectetur adipiscicing elit.
+            </p>
+            <button class="mt-4 px-6 py-3 rounded-md bg-yellow-700 text-white front-bold ">Read More</button>
+            </div>
+        </li>
+        <li class="p-5">
+            <div class="border rounded-lg p-5">
+                <Picture class="h-50 w-full object-cover rounded-md" src={alpineMeme} alt="1/29" />
+            <h2 class="mt-2 text-2xl font-bold text-gray-700"> Event/Meeting Heading. </h2>
+            <p class="mt-2 text-gray-500">   
+                Lorem ipsum, dolor sit amet consectetur adipiscicing elit.
+            </p>
+            <button class="mt-4 px-6 py-3 rounded-md bg-yellow-700 text-white front-bold ">Read More</button>
+            </div>
+        </li>
+        <li class="p-5">
+            <div class="border rounded-lg p-5">
+                <Picture class="h-50 w-full object-cover rounded-md" src={alpineMeme} alt="1/29" />
+            <h2 class="mt-2 text-2xl font-bold text-gray-700"> Event/Meeting Heading. </h2>
+            <p class="mt-2 text-gray-500">   
+                Lorem ipsum, dolor sit amet consectetur adipiscicing elit.
+            </p>
+            <button class="mt-4 px-6 py-3 rounded-md bg-yellow-700 text-white front-bold ">Read More</button>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<!-- (left) Prev Button -->
+<div class="w-2/12 flex items-center">
+    <div class="w-full">
+        <button onclick="prev()" class="p-3 rounded-full bg-white  border border-gray-100 shadow-lg ml-5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                <path fill-rule="evenodd" d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+              </svg>                                      
+        </button>
+    </div>
+    </div>
+        </div>
+    </section>
+</body>
