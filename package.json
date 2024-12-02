@@ -1,32 +1,32 @@
 {
   "name": "ccsf-cs-club",
-  "license": "MIT",
-  "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "build": "astro build",
+    "preview": "astro preview"
   },
+  "keywords": [],
+  "author": "City College of San Francisco Computer Science Club",
+  "license": "MIT",
   "dependencies": {
-    "@astrojs/check": "^0.4.1",
-    "@astrojs/netlify": "^5.3.2",
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/netlify": "^5.5.4",
+    "@astrojs/tailwind": "^5.1.2",
     "@iconify-json/mdi": "^1.2.1",
-    "astro": "^4.2.1",
+    "astro": "^4.16.16",
     "astro-icon": "^1.1.4",
-    "daisyui": "^4.7.2",
-    "flowbite": "^2.3.0",
-    "flowbite-datepicker": "^1.2.6",
-    "typescript": "^5.3.3"
+    "daisyui": "^4.12.14",
+    "typescript": "^5.7.2"
   },
   "devDependencies": {
-    "prettier": "3.2.5",
-    "prettier-plugin-astro": "0.13.0",
-    "prettier-plugin-tailwindcss": "0.5.11",
-    "tailwindcss": "^3.4.1"
-  },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+    "prettier": "^3.4.1",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "sharp": "^0.33.5",
+    "tailwindcss": "^3.4.15"
+  }
 }

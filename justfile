@@ -2,13 +2,13 @@ help:
 	echo "This is a justfile! Install the `just` command to use these shortcuts, or just read this file!"
 
 dev:
-	yarn dev
+	pnpm dev
 
 fmt:
-	yarn prettier . --write
+	pnpm prettier . --write
 
 install_prettier:
-	yarn add --dev --exact prettier prettier-plugin-astro prettier-plugin-tailwindcss
+	pnpm add --dev --exact prettier prettier-plugin-astro prettier-plugin-tailwindcss
 
 ngrok:
 	ngrok http 4321

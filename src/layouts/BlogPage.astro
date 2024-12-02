@@ -1,24 +1,24 @@
 ---
-import Layout from './Layout.astro';
-import BlogTitle from '../components/BlogTitle.astro';
+import Layout from "./Layout.astro";
+import BlogTitle from "../components/BlogTitle.astro";
 const { frontmatter } = Astro.props;
 const date = new Date(frontmatter.date);
 ---
-<Layout title={frontmatter.title}>
-<main class="m-auto w-full md:w-4/5 lg:w-3/5 p-4 text-xl">
 
-  <BlogTitle
-  title={frontmatter.title}
-  author={frontmatter.author}
-  date={date}
-  linkedin={frontmatter.linkedin}
-  github={frontmatter.github}
-  website={frontmatter.website}
-/>
+<Layout title={frontmatter.title}>
+  <main class="m-auto w-full p-4 text-xl md:w-4/5 lg:w-3/5">
+    <BlogTitle
+      title={frontmatter.title}
+      author={frontmatter.author}
+      date={date}
+      linkedin={frontmatter.linkedin}
+      github={frontmatter.github}
+      website={frontmatter.website}
+    />
     <article class="blog-content">
       <slot />
     </article>
-</main>
+  </main>
 </Layout>
 <style>
   /* This will only target <p> tags inside .blog-content */
@@ -39,26 +39,25 @@ const date = new Date(frontmatter.date);
     font-weight: bold;
     margin: 2rem 0 1.5rem;
   }
-  
-  .blog-content :global(h2) {
 
+  .blog-content :global(h2) {
     font-size: 2.1rem;
     font-weight: bold;
     margin: 4.5rem 0 1rem;
   }
-  
+
   .blog-content :global(h3) {
     font-size: 1.5rem;
     font-weight: bold;
     margin: 2rem 0 1rem;
   }
-  
+
   .blog-content :global(h4) {
     font-size: 1.25rem;
     font-weight: bold;
     margin: 1.5rem 0 1rem;
   }
-    /* List styles */
+  /* List styles */
   .blog-content :global(ul) {
     list-style-type: disc;
     margin: 1.5rem 0;
@@ -74,7 +73,7 @@ const date = new Date(frontmatter.date);
   .blog-content :global(> ol > li) {
     margin-top: 2.5rem;
     margin-bottom: 0.75rem;
-}
+  }
 
   .blog-content :global(li) {
     margin-top: 0.5rem;
@@ -85,8 +84,8 @@ const date = new Date(frontmatter.date);
 
   .blog-content :global(ul > li > p),
   .blog-content :global(ol > li > p) {
-    margin-bottom: .75rem;
-}
+    margin-bottom: 0.75rem;
+  }
 
   /* Nested list styles */
   .blog-content :global(li > ul),
@@ -94,4 +93,3 @@ const date = new Date(frontmatter.date);
     margin: 0.5rem 0;
   }
 </style>
-
