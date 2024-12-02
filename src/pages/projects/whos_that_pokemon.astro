@@ -3,32 +3,32 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Pokedex">
-<div class="hero bg-base-200 min-h-[80vh]">
-  <div class="hero-content text-center">
-    <div class="max-w-md flex flex-col">
-      <div id="surprise" class="flex flex-col items-center">
-      <div class="pokeball-container">
-        <img 
-          class="pokeball-image"
-          width="240" 
-          height="240" 
-          alt="Poké Ball" 
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/240px-Pok%C3%A9_Ball_icon.svg.png" 
-          hx-get="/api/surprise_pokemon"
-          hx-target="#surprise"
-          hx-swap="outerHTML"
-        />
+  <div class="hero min-h-[80vh] bg-base-200">
+    <div class="hero-content text-center">
+      <div class="flex max-w-md flex-col">
+        <div id="surprise" class="flex flex-col items-center">
+          <div class="pokeball-container">
+            <img
+              class="pokeball-image"
+              width="240"
+              height="240"
+              alt="Poké Ball"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/240px-Pok%C3%A9_Ball_icon.svg.png"
+              hx-get="/api/surprise_pokemon"
+              hx-target="#surprise"
+              hx-swap="outerHTML"
+            />
+          </div>
+          <span class="pokemon-text">Who's that Pokemon?</span>
+          <div class="h-24"></div>
         </div>
-        <span class="pokemon-text" >Who's that Pokemon?</span>
-        <div class="h-24"/>
       </div>
     </div>
   </div>
-</div>
- <style>
+  <style>
     .pokeball-container {
       display: inline-block;
-      border-radius: 100%; 
+      border-radius: 100%;
       overflow: hidden;
       transition: box-shadow 0.2s ease;
     }
@@ -41,8 +41,7 @@ import Layout from "../../layouts/Layout.astro";
     }
     .pokemon-text {
       margin-top: 20px; /*adjusts "who's that pokemon"*/
-      text-align: center; 
+      text-align: center;
     }
   </style>
-
 </Layout>
